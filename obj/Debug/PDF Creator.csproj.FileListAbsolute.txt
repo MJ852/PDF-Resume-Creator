@@ -1,0 +1,11 @@
+C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\PDF Creator.exe.config
+C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\PDF Creator.exe
+C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\PDF Creator.pdb
+C:\Users\Joyce Calangian\source\repos\PDF Creator\obj\Debug\PDF Creator.csproj.AssemblyReference.cache
+C:\Users\Joyce Calangian\source\repos\PDF Creator\obj\Debug\PDF Creator.csproj.SuggestedBindingRedirects.cache
+C:\Users\Joyce Calangian\source\repos\PDF Creator\obj\Debug\PDF_Creator.Form1.resources
+C:\Users\Joyce Calangian\source\repos\PDF Creator\obj\Debug\PDF_Creator.Properties.Resources.resources
+C:\Users\Joyce Calangian\source\repos\PDF Creator\obj\Debug\PDF Creator.csproj.GenerateResource.cache
+C:\Users\Joyce Calangian\source\repos\PDF Creator\obj\Debug\PDF Creator.csproj.CoreCompileInputs.cache
+C:\Users\Joyce Calangian\source\repos\PDF Creator\obj\Debug\PDF Creator.exe
+C:\Users\Joyce Calangian\source\repos\PDF Creator\obj\Debug\PDF Creator.pdb
