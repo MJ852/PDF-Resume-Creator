@@ -59,7 +59,7 @@
             this.txtbxSkills = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.lblSkills = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtbxInterest = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
@@ -349,14 +349,14 @@
             this.lblSkills.TabIndex = 26;
             this.lblSkills.Text = "Skills: ";
             // 
-            // textBox1
+            // txtbxInterest
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(646, 494);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(327, 25);
-            this.textBox1.TabIndex = 31;
+            this.txtbxInterest.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbxInterest.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxInterest.Location = new System.Drawing.Point(646, 494);
+            this.txtbxInterest.Name = "txtbxInterest";
+            this.txtbxInterest.Size = new System.Drawing.Size(327, 25);
+            this.txtbxInterest.TabIndex = 31;
             // 
             // panel7
             // 
@@ -391,7 +391,7 @@
             this.btnSave.TabIndex = 32;
             this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.button1_Click);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnGenerate
             // 
@@ -417,7 +417,7 @@
             this.ClientSize = new System.Drawing.Size(1000, 647);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtbxInterest);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtbxSkills);
@@ -497,7 +497,7 @@
         private System.Windows.Forms.TextBox txtbxSkills;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label lblSkills;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtbxInterest;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSave;
