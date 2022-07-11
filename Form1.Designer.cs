@@ -33,13 +33,13 @@
             this.btnGenerate = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.rchtxtbxUpload = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.rchtxtbxUpload = new System.Windows.Forms.RichTextBox();
-            this.lblNote = new System.Windows.Forms.Label();
-            this.lblNote2 = new System.Windows.Forms.Label();
             this.lnkLearnmore = new System.Windows.Forms.LinkLabel();
+            this.lblNote2 = new System.Windows.Forms.Label();
+            this.lblNote = new System.Windows.Forms.Label();
             this.panel8.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -60,7 +60,7 @@
             this.btnSave.TabIndex = 32;
             this.btnSave.Text = "&Select File";
             this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // btnGenerate
             // 
@@ -77,6 +77,7 @@
             this.btnGenerate.TabIndex = 33;
             this.btnGenerate.Text = "&Generate to PDF";
             this.btnGenerate.UseVisualStyleBackColor = false;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
             // lblTitle
             // 
@@ -89,7 +90,6 @@
             this.lblTitle.Size = new System.Drawing.Size(700, 74);
             this.lblTitle.TabIndex = 26;
             this.lblTitle.Text = "RESUME GENERATOR";
-            this.lblTitle.Click += new System.EventHandler(this.lblSkills_Click);
             // 
             // panel8
             // 
@@ -99,6 +99,15 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(844, 109);
             this.panel8.TabIndex = 27;
+            // 
+            // rchtxtbxUpload
+            // 
+            this.rchtxtbxUpload.BackColor = System.Drawing.Color.Silver;
+            this.rchtxtbxUpload.Location = new System.Drawing.Point(11, 10);
+            this.rchtxtbxUpload.Name = "rchtxtbxUpload";
+            this.rchtxtbxUpload.Size = new System.Drawing.Size(820, 88);
+            this.rchtxtbxUpload.TabIndex = 0;
+            this.rchtxtbxUpload.Text = "";
             // 
             // label1
             // 
@@ -111,7 +120,6 @@
             this.label1.Size = new System.Drawing.Size(287, 23);
             this.label1.TabIndex = 29;
             this.label1.Text = "Upload your JSON file here:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
@@ -137,39 +145,6 @@
             this.panel2.Size = new System.Drawing.Size(920, 368);
             this.panel2.TabIndex = 35;
             // 
-            // rchtxtbxUpload
-            // 
-            this.rchtxtbxUpload.BackColor = System.Drawing.Color.Silver;
-            this.rchtxtbxUpload.Location = new System.Drawing.Point(11, 10);
-            this.rchtxtbxUpload.Name = "rchtxtbxUpload";
-            this.rchtxtbxUpload.Size = new System.Drawing.Size(820, 88);
-            this.rchtxtbxUpload.TabIndex = 0;
-            this.rchtxtbxUpload.Text = "";
-            // 
-            // lblNote
-            // 
-            this.lblNote.AutoSize = true;
-            this.lblNote.BackColor = System.Drawing.Color.Transparent;
-            this.lblNote.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNote.ForeColor = System.Drawing.Color.NavajoWhite;
-            this.lblNote.Location = new System.Drawing.Point(61, 16);
-            this.lblNote.Name = "lblNote";
-            this.lblNote.Size = new System.Drawing.Size(72, 23);
-            this.lblNote.TabIndex = 34;
-            this.lblNote.Text = "Note: ";
-            // 
-            // lblNote2
-            // 
-            this.lblNote2.AutoSize = true;
-            this.lblNote2.BackColor = System.Drawing.Color.Transparent;
-            this.lblNote2.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNote2.ForeColor = System.Drawing.Color.NavajoWhite;
-            this.lblNote2.Location = new System.Drawing.Point(125, 16);
-            this.lblNote2.Name = "lblNote2";
-            this.lblNote2.Size = new System.Drawing.Size(570, 22);
-            this.lblNote2.TabIndex = 35;
-            this.lblNote2.Text = "You must provide your JSON file to generate your resume to PDF";
-            // 
             // lnkLearnmore
             // 
             this.lnkLearnmore.AutoEllipsis = true;
@@ -183,6 +158,30 @@
             this.lnkLearnmore.TabIndex = 36;
             this.lnkLearnmore.TabStop = true;
             this.lnkLearnmore.Text = "Learn More ...";
+            // 
+            // lblNote2
+            // 
+            this.lblNote2.AutoSize = true;
+            this.lblNote2.BackColor = System.Drawing.Color.Transparent;
+            this.lblNote2.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNote2.ForeColor = System.Drawing.Color.NavajoWhite;
+            this.lblNote2.Location = new System.Drawing.Point(125, 16);
+            this.lblNote2.Name = "lblNote2";
+            this.lblNote2.Size = new System.Drawing.Size(570, 22);
+            this.lblNote2.TabIndex = 35;
+            this.lblNote2.Text = "You must provide your JSON file to generate your resume to PDF";
+            // 
+            // lblNote
+            // 
+            this.lblNote.AutoSize = true;
+            this.lblNote.BackColor = System.Drawing.Color.Transparent;
+            this.lblNote.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNote.ForeColor = System.Drawing.Color.NavajoWhite;
+            this.lblNote.Location = new System.Drawing.Point(61, 16);
+            this.lblNote.Name = "lblNote";
+            this.lblNote.Size = new System.Drawing.Size(72, 23);
+            this.lblNote.TabIndex = 34;
+            this.lblNote.Text = "Note: ";
             // 
             // Form1
             // 
