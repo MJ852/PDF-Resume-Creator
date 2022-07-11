@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.Text.Json;
+using iTextSharp.text.pdf.draw;
 
 namespace PDF_Creator
 {
@@ -57,11 +58,13 @@ namespace PDF_Creator
 
                 try
                 {
+
                     jsonFromFile = File.ReadAllText(_path);
                     Resume myResume = JsonConvert.DeserializeObject<Resume>(jsonFromFile);
                     rchtxtbxUpload.Text = _path;
 
                     readjson = true;
+
                 }
 
                 catch (Exception)
@@ -81,83 +84,128 @@ namespace PDF_Creator
                 string openfile = File.ReadAllText(_path);
                 jsonFromFile = File.ReadAllText(_path);
                 Resume myResume = JsonConvert.DeserializeObject<Resume>(jsonFromFile);
-                FileStream destination = new FileStream(@"C:\Users\Joyce Calangian\Documents\MJ\PUP\SUBJECTS\OBJECT ORIENTED PROGRAMMING\PDF Creator\CALANGIAN_MARYJOYCE.pdf", FileMode.Create);
-
+                FileStream fs = new FileStream(@"C:\Users\Joyce Calangian\Documents\MJ\PUP\SUBJECTS\OBJECT ORIENTED PROGRAMMING\PDF Creator\CALANGIAN_MARYJOYCE.pdf", FileMode.Create);
+                
                 BaseFont bfTimes = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
-                iTextSharp.text.Font biggest = new iTextSharp.text.Font(bfTimes, 34, iTextSharp.text.Font.BOLD); //name
-                iTextSharp.text.Font big = new iTextSharp.text.Font(bfTimes, 22, iTextSharp.text.Font.BOLD); //section title
+                iTextSharp.text.Font name = new iTextSharp.text.Font(bfTimes, 34, iTextSharp.text.Font.BOLD); //name
+                iTextSharp.text.Font big = new iTextSharp.text.Font(bfTimes, 20, iTextSharp.text.Font.BOLD); //section title
                 iTextSharp.text.Font normal = new iTextSharp.text.Font(bfTimes, 16, iTextSharp.text.Font.NORMAL); //title
                 iTextSharp.text.Font small = new iTextSharp.text.Font(bfTimes, 14, iTextSharp.text.Font.NORMAL); // details
 
                 Document doc = new Document(PageSize.A4, 60, 75, 60, 75);
-                PdfWriter writer = PdfWriter.GetInstance(doc, destination);
-
+                PdfWriter writer = PdfWriter.GetInstance(doc, fs);
+ 
                 doc.Open();
+
+               // firstname = myResume.firstname;
+                //MI = myResume.MI;
+               // lastname = myResume.lastname;
+                position = myResume.position;
+                objective = myResume.objective;
+                email = myResume.email;
+                contactno = myResume.contactno;
+                address = myResume.address;
+                age = myResume.age;
+                educational = myResume.educationalattainment;
+                college = myResume.college;
+                graduated = myResume.yeargraduated;
+                work1 = myResume.work1;
+                company1 = myResume.company1;
+                yearwork1 = myResume.yearwork1;
+                work2 = myResume.work2;
+                company2 = myResume.company2; 
+                yearwork2 = myResume.yearwork2;
+                skill1 = myResume.skill1;
+                skill2 = myResume.skill2;
+                skill3 = myResume.skill3;
 
                 Paragraph paragraph = new Paragraph();
 
-                paragraph.Add(new Phrase(name + "\n" + "\n", biggest));
-                paragraph.Add(new Phrase(position, big));
-                //line 
-                paragraph.Add(new Phrase(objective + "\n" + "\n", big));
+                //Name
+                paragraph.Add(new Phrase( myResume.firstname + myResume.MI + "\n" + "\n", name ));
+                paragraph.Add(new Phrase( myResume.lastname + "\n" + "\n", name));
+                paragraph.Add(new Phrase( position + "\n" , big ));
+                paragraph.Add(new Phrase("\n"));
+
+                LineSeparator line1 = new LineSeparator(3f, 100f, BaseColor.GRAY, Element.ALIGN_CENTER, 3 );
+                paragraph.Add(line1);
+                paragraph.Add(new Phrase("\n" + "\n"));
+
+                //Objective
+                paragraph.Add(new Phrase("Objective: " + "\n", big));
+                paragraph.Add(new Phrase( objective + "\n" + "\n", normal));
+
+                paragraph.Add(line1);
+                paragraph.Add(new Phrase("\n" + "\n"));
 
                 //Personal Information
-                paragraph.Add(new Phrase(objective + "\n" + "\n", small));
-                paragraph.Add(new Phrase(email + "\n" + "\n", small));
-                paragraph.Add(new Phrase(contactno + "\n" + "\n", small));
-                paragraph.Add(new Phrase(address + "\n" + "\n", small));
-                paragraph.Add(new Phrase(age + "\n" + "\n", small));
+                paragraph.Add(new Phrase("Personal Information" + "\n" , big));
+                paragraph.Add(new Phrase("Email: " + email + "\n" ,  small));
+                paragraph.Add(new Phrase("Contact Number: " + contactno + "\n" , small));
+                paragraph.Add(new Phrase("Address: " + address +"\n" , small));
+                paragraph.Add(new Phrase("Age: " + age + "\n" + "\n" + "\n" , small));
 
                 //Education
-
-                paragraph.Add(new Phrase(educational  +"\n" + "\n", big));
-                paragraph.Add(new Phrase(college + "\n" + "\n", small));
-                paragraph.Add(new Phrase(graduated + "\n" + "\n", small));
+                paragraph.Add(new Phrase("Educational Background" + "\n" , big));
+                paragraph.Add(new Phrase("Course: " + educational  +"\n", normal));
+                paragraph.Add(new Phrase("University: " + college + "\n", small));
+                paragraph.Add(new Phrase("Year Graduated: " + myResume.yeargraduated + "\n" + "\n" + "\n", small));
 
                 //Work Experience
-
-                paragraph.Add(new Phrase(work1 + "\n" + "\n", big));
-                paragraph.Add(new Phrase("• " + company1 + "\n" + "\n", small));
-                paragraph.Add(new Phrase("• " +yearwork1 + "\n" + "\n", small));
-                paragraph.Add(new Phrase(work2 + "\n" + "\n", big));
-                paragraph.Add(new Phrase("• " + company2 + "\n" + "\n", small));
-                paragraph.Add(new Phrase("• " + yearwork2 + "\n" + "\n", small));
+                paragraph.Add(new Phrase("Work Experience: " + "\n" , big));
+                paragraph.Add(new Phrase( work1 + "\n", normal));
+                paragraph.Add(new Phrase("• "+ "Company: " + company1 + "\n" , small));
+                paragraph.Add(new Phrase("• " + "Year: " + yearwork1 + "\n" + "\n", small));
+                paragraph.Add(new Phrase(work2 + "\n", normal)) ;
+                paragraph.Add(new Phrase("• " + "Company: " + company2 + "\n" , small));
+                paragraph.Add(new Phrase("• " + "Year: " + yearwork2 + "\n" + "\n" + "\n", small));
 
                 //Skills
-                paragraph.Add(new Phrase("• " + skill1 + "\n" + "\n", small));
-                paragraph.Add(new Phrase("• " + skill2 + "\n" + "\n", small));
+                paragraph.Add(new Phrase("Skills" +"\n",  big));
+                paragraph.Add(new Phrase("• " + skill1 + "\n" , small));
+                paragraph.Add(new Phrase("• " + skill2 + "\n" , small));
                 paragraph.Add(new Phrase("• " + skill3 + "\n" + "\n", small));
 
+                paragraph.Add(line1);
 
                 doc.Add(paragraph);
                 doc.Close();
                 writer.Close();
-                destination.Close();
+                fs.Close();
                 readjson = false;
 
-                MessageBox.Show("Your PDF file has been saved!");
+                
+
+                MessageBox.Show("Your PDF file has been saved!", "Pdf Created", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 MessageBox.Show("Error");
             }
+
+            btnGenerate.Enabled = false;
+            rchtxtbxUpload.Clear();
+            
         }
 
         class Resume
         {
-            public string name { get; set; }
+            public string firstname { get; set; }
+            public string MI { get; set; }
+            public string lastname { get; set; }
             public string position { get; set; }
             public string objective { get; set; }
             public string email { get; set; }
             public string contactno { get; set; }
             public string address { get; set; }
             public string age { get; set; }
-            public string educational { get; set; }
+            public string educationalattainment { get; set; }
             public string college { get; set; }
-            public string graduated { get; set; }
+            public string yeargraduated { get; set; }
             public string work1 { get; set; }
             public string company1 { get; set; }
             public string yearwork1 { get; set; }
+            public string work2 { get; set; }
             public string company2 { get; set; }
             public string yearwork2{ get; set; }
             public string skill1 { get; set; }
