@@ -12,3 +12,24 @@ C:\Users\Joyce Calangian\source\repos\PDF Creator\obj\Debug\PDF Creator.pdb
 C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Joyce Calangian\source\repos\PDF Creator\obj\Debug\PDF Creator.csproj.CopyComplete
+C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\itextsharp.dll
+C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\itextsharp.xml
+C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\System.Buffers.dll
+C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\System.Memory.dll
+C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\System.Text.Json.dll
+C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\System.ValueTuple.dll
+C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\System.Buffers.xml
+C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\System.Memory.xml
+C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\System.Text.Json.xml
+C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Joyce Calangian\source\repos\PDF Creator\bin\Debug\System.ValueTuple.xml
