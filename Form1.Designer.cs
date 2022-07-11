@@ -40,9 +40,14 @@
             this.lnkLearnmore = new System.Windows.Forms.LinkLabel();
             this.lblNote2 = new System.Windows.Forms.Label();
             this.lblNote = new System.Windows.Forms.Label();
+            this.pnlLearnMore = new System.Windows.Forms.Panel();
+            this.rchtxtbxLearn = new System.Windows.Forms.RichTextBox();
+            this.lblnotes = new System.Windows.Forms.Label();
+            this.btnpnl = new System.Windows.Forms.Button();
             this.panel8.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.pnlLearnMore.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSave
@@ -133,6 +138,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DimGray;
+            this.panel2.Controls.Add(this.pnlLearnMore);
             this.panel2.Controls.Add(this.lnkLearnmore);
             this.panel2.Controls.Add(this.lblNote2);
             this.panel2.Controls.Add(this.lblNote);
@@ -158,6 +164,7 @@
             this.lnkLearnmore.TabIndex = 36;
             this.lnkLearnmore.TabStop = true;
             this.lnkLearnmore.Text = "Learn More ...";
+            this.lnkLearnmore.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkLearnmore_LinkClicked);
             // 
             // lblNote2
             // 
@@ -183,6 +190,51 @@
             this.lblNote.TabIndex = 34;
             this.lblNote.Text = "Note: ";
             // 
+            // pnlLearnMore
+            // 
+            this.pnlLearnMore.BackColor = System.Drawing.Color.Gainsboro;
+            this.pnlLearnMore.Controls.Add(this.btnpnl);
+            this.pnlLearnMore.Controls.Add(this.lblnotes);
+            this.pnlLearnMore.Controls.Add(this.rchtxtbxLearn);
+            this.pnlLearnMore.Location = new System.Drawing.Point(147, 0);
+            this.pnlLearnMore.Name = "pnlLearnMore";
+            this.pnlLearnMore.Size = new System.Drawing.Size(671, 356);
+            this.pnlLearnMore.TabIndex = 37;
+            this.pnlLearnMore.Visible = false;
+            // 
+            // rchtxtbxLearn
+            // 
+            this.rchtxtbxLearn.AcceptsTab = true;
+            this.rchtxtbxLearn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.rchtxtbxLearn.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.rchtxtbxLearn.Location = new System.Drawing.Point(23, 65);
+            this.rchtxtbxLearn.Name = "rchtxtbxLearn";
+            this.rchtxtbxLearn.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rchtxtbxLearn.Size = new System.Drawing.Size(630, 274);
+            this.rchtxtbxLearn.TabIndex = 0;
+            this.rchtxtbxLearn.Text = resources.GetString("rchtxtbxLearn.Text");
+            // 
+            // lblnotes
+            // 
+            this.lblnotes.AutoSize = true;
+            this.lblnotes.Location = new System.Drawing.Point(135, 25);
+            this.lblnotes.Name = "lblnotes";
+            this.lblnotes.Size = new System.Drawing.Size(404, 23);
+            this.lblnotes.TabIndex = 1;
+            this.lblnotes.Text = "Please use this format in creating JSON file.";
+            // 
+            // btnpnl
+            // 
+            this.btnpnl.BackColor = System.Drawing.Color.IndianRed;
+            this.btnpnl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnpnl.Location = new System.Drawing.Point(621, 0);
+            this.btnpnl.Name = "btnpnl";
+            this.btnpnl.Size = new System.Drawing.Size(50, 35);
+            this.btnpnl.TabIndex = 2;
+            this.btnpnl.Text = "X";
+            this.btnpnl.UseVisualStyleBackColor = false;
+            this.btnpnl.Click += new System.EventHandler(this.btnpnl_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
@@ -203,6 +255,8 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.pnlLearnMore.ResumeLayout(false);
+            this.pnlLearnMore.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -219,6 +273,10 @@
         private System.Windows.Forms.Label lblNote;
         private System.Windows.Forms.LinkLabel lnkLearnmore;
         private System.Windows.Forms.Label lblNote2;
+        private System.Windows.Forms.Panel pnlLearnMore;
+        private System.Windows.Forms.Label lblnotes;
+        private System.Windows.Forms.RichTextBox rchtxtbxLearn;
+        private System.Windows.Forms.Button btnpnl;
     }
 }
 

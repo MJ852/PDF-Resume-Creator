@@ -25,6 +25,13 @@ namespace PDF_Creator
         private string name, position, objective, email, contactno, address, age, educational,
             college, graduated, work1, company1, yearwork1, work2, company2, yearwork2, skill1, skill2, skill3;
 
+        private void btnpnl_Click(object sender, EventArgs e)
+        {
+            pnlLearnMore.Visible = false;
+        }
+
+        private bool panel = false;
+
         private bool readjson = false;
         public Form1()
         {
@@ -32,16 +39,23 @@ namespace PDF_Creator
             InitializeComponent();
 
             btnGenerate.Enabled = false;
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
+        private void lnkLearnmore_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
+                pnlLearnMore.Visible = true;
+           
+        }
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-
+            panel = false;
             string jsonFromFile;
             btnGenerate.Enabled = true;
            
@@ -78,6 +92,7 @@ namespace PDF_Creator
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
+            panel = false;
             if (readjson)
             {
                 string jsonFromFile;
